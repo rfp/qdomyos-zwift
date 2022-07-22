@@ -429,6 +429,9 @@ void domyostreadmill::characteristicChanged(const QLowEnergyCharacteristic &char
         return;
     }
 
+    // emit debug message:
+    emit debug(QStringLiteral("Pressed << ") + QString::number(value.at(22)) + QStringLiteral(" >> ");
+
     if (value.at(22) == 0x06) {
         emit debug(QStringLiteral("start button pressed!"));
 
